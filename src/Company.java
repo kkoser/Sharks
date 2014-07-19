@@ -2,8 +2,8 @@
 public class Company {
 	private String name;
 	private String type;
-	private int value;
-	private int investedAmount;
+	private double value;
+	private double investedAmount;
 	
 	public String getName() {
 		return name;
@@ -21,19 +21,19 @@ public class Company {
 		this.type = type;
 	}
 	
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 	
-	public void setValue(int value) {
+	public void setValue(double value) {
 		this.value = value;
 	}
 	
-	public int getInvestedAmount() {
+	public double getInvestedAmount() {
 		return investedAmount;
 	}
 	
-	public void setInvestedAmount(int investedAmount) {
+	public void setInvestedAmount(double investedAmount) {
 		this.investedAmount = investedAmount;
 	}
 }

@@ -20,4 +20,14 @@ public class Investor {
 	}
 	
 	
+	public void updateCompanies( GlobalModel model ) {
+		for( Company c : getCompanies() )
+		{
+			double change = model.getChangedForCategory( c.getCategory() );
+			double newVal = c.getValue() * change;
+			c.setValue( newVal );
+		}
+	}
+	
+	
 }
