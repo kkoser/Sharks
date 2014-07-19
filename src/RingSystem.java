@@ -54,6 +54,7 @@ public class RingSystem{
 		int tempRingLevel;
 		String temp;
 		Random rnd = new Random();
+		double rangeMax = 20.0;
 		
 		//Mix table
 		for (index = NumberOfCatagories; index > 0; index--)
@@ -75,12 +76,12 @@ public class RingSystem{
 		//set official profit values for that month
 		while(index < NumberOfCatagories){
 			if(index == 0){//first run
-				officialProfitValues[index] = profitValues[tempRingLevel];
+				officialProfitValues[index] = profitValues[tempRingLevel] + ( (rangeMax) * rnd.nextDouble() );
 			} else {
 				if(index > NumberOfCatagories/2){//set negative values
-					officialProfitValues[index] = -profitValues[tempRingLevel];
+					officialProfitValues[index] = -profitValues[tempRingLevel] - ( (rangeMax) * rnd.nextDouble() );
 				} else {//set positive values
-					officialProfitValues[index] = profitValues[tempRingLevel];
+					officialProfitValues[index] = profitValues[tempRingLevel] + ( (rangeMax) * rnd.nextDouble() );
 				}
 			}
 			
