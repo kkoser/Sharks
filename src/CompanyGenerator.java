@@ -1,7 +1,7 @@
 
 public class CompanyGenerator {
 	
-	String[] bizNames = new String[] {
+	public static String[] bizNames = new String[] {
 			"Pear",
 			"Foot",
 			"Pottle",
@@ -21,7 +21,7 @@ public class CompanyGenerator {
 	};
 	
 	// todo: fix the all-male sexism
-	String[] ownerNames = new String[] {
+	public static String[] ownerNames = new String[] {
 			"Steve",
 			"Bill",
 			"Jim",
@@ -44,11 +44,20 @@ public class CompanyGenerator {
 			"Zack"
 	};
 
-	public Company generate() {
+	public static Company generate() {
 		Company c = new Company();
-		int nameIndex = (int) (Math.random() * ownerNames.length);
-		c.setName(ownerNames[nameIndex]);
-		c.setAge((int) (Math.random() * 4));
+		int ownerNameIndex = (int) (Math.random() * ownerNames.length);
+		c.setOwnerName(ownerNames[ownerNameIndex]);
+		int bizNameIndex = (int) (Math.random() * bizNames.length);
+		c.setName(bizNames[bizNameIndex]);
+		c.setAge((int) (Math.random() * 18));
+		c.setValue((int) (Math.random() * 900000 + 100000)); // 100,000 -> 1,000,000
+		c.setInvestedAmount(0);
+		
+		String[] categories = RingSystem.getCategories();
+		int categoryIndex = (int) (Math.random() * categories.length);
+		c.setType(categories[categoryIndex]);
+		
 		return c;
 	}
 }

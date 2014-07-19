@@ -6,6 +6,8 @@ public class Company {
 	private String type;
 	private double value;
 	private double investedAmount;
+	private String ownerName;
+
 	private int ownerType;
 	private int age;
 	public ArrayList<String> categories;
@@ -95,5 +97,21 @@ public class Company {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public String getOwnerName() {
+		return ownerName;
+	}
+
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+
+	public int getOwnerType() {
+		return ownerType;
+	}
+
+	public void setOwnerType(int ownerType) {
+		this.ownerType = ownerType;
 	}
 }
