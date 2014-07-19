@@ -78,7 +78,7 @@ public class RingSystem{
 			if(index == 0){//first run
 				officialProfitValues[index] = profitValues[tempRingLevel] + ( (rangeMax) * rnd.nextDouble() );
 			} else {
-				if(index > NumberOfCatagories/2){//set negative values
+				if(index > (NumberOfCatagories * 3) / 4){//set negative values
 					officialProfitValues[index] = -profitValues[tempRingLevel] - ( (rangeMax) * rnd.nextDouble() );
 				} else {//set positive values
 					officialProfitValues[index] = profitValues[tempRingLevel] + ( (rangeMax) * rnd.nextDouble() );
