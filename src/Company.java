@@ -10,6 +10,10 @@ public class Company {
 	private int age;
 	public ArrayList<String> categories;
 	
+	public Company() {
+		categories = new ArrayList<String>();
+	}
+	
 	public Company(String n, String t, double v, double iA, ArrayList<String> c) {
 		name = n;
 		type = t;
@@ -35,7 +39,7 @@ public class Company {
 		case 3:
 			return "Hey there! I'm here today to pitch you the biggest opportunity of your life. My company " + getName() + " is going to be the next big thing in " + catString + "! If you don't invest now, it's gonna cost you a lot more next round!";
 		case 4:
-			return "
+			return "";
 		}
 		
 		return "";

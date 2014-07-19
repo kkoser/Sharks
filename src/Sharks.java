@@ -1,19 +1,28 @@
+import java.util.ArrayList;
+
 
 public class Sharks {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println( "Hellow World!" );
-		
-		Investor steve = new Investor( 100000.00, "Steve" );
+		Investor steve = new Investor( "Steve", 100000.00);
 		GlobalModel model = new GlobalModel();
+		System.out.println(getInvestorData(steve));
+		
 		while( true ) {
 			steve.updateCompanies( model );
 		}
 	}
 	
-	public String getStatusData() {
-		return "blank data";
+	public static String getInvestorData(Investor inv) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Name: " + inv.getName() + "\n");
+		sb.append("Money: " + inv.getMoney() + "\n");
+		ArrayList<Company> companies = inv.getCompanies();
+		sb.append("Companies: ");
+		for(Company c : companies) {
+			sb.append(c.getName() + ", ");
+		}
+		return sb.toString();
 	}
 	
 }

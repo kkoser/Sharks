@@ -98,6 +98,10 @@ public class RingSystem{
 		
 	}//end of updateTable
 	
+	public String[] getCategories() {
+		return catagories;
+	}
+	
 	public void printCatagoriesAndProfits(){
 		for (int index = NumberOfCatagories; index > 0; index--){
 			System.out.printf("%s\t%4.0f\n",catagories[index], officialProfitValues[index]);

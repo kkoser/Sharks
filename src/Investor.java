@@ -1,9 +1,15 @@
 import java.util.ArrayList;
 
 public class Investor {
-	private ArrayList<Company> companies;
-	private double money;
 	private String name;
+	private double money;
+	private ArrayList<Company> companies;
+	
+	public Investor(String name, double money) {
+		this.name = name;
+		this.money = money;
+		companies = new ArrayList<Company>();
+	}
 	
 	public String getName() {
 		return name;
