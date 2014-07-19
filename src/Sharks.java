@@ -11,5 +11,9 @@ public class Sharks {
 			steve.updateCompanies( model );
 		}
 	}
-
+	
+	public String getStatusData() {
+		return "blank data";
+	}
+	
 }
