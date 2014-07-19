@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Company {
 	private String name;
-	private String type;
 	private double value;
 	private double investedAmount;
 	private String ownerName;
@@ -18,7 +17,6 @@ public class Company {
 	
 	public Company(String n, String t, double v, double iA, ArrayList<String> c) {
 		name = n;
-		type = t;
 		value = v;
 		investedAmount = iA;
 		categories = c;
@@ -55,6 +53,10 @@ public class Company {
 		return categories;
 	}
 	
+	public void addCategory(String cat) {
+		categories.add(cat);
+	}
+	
 	public void setCategories(ArrayList<String> c) {
 		categories = c;
 	}
@@ -65,14 +67,6 @@ public class Company {
 	
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	public String getType() {
-		return type;
-	}
-	
-	public void setType(String type) {
-		this.type = type;
 	}
 	
 	public double getValue() {

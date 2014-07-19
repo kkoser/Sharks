@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 
 public class CompanyGenerator {
 	
@@ -54,9 +56,20 @@ public class CompanyGenerator {
 		c.setValue((int) (Math.random() * 900000 + 100000)); // 100,000 -> 1,000,000
 		c.setInvestedAmount(0);
 		
+		ArrayList<Integer> numsGenerated = new ArrayList<Integer>();
+		
 		String[] categories = RingSystem.getCategories();
-		int categoryIndex = (int) (Math.random() * categories.length);
-		c.setType(categories[categoryIndex]);
+		int numCategories = (int) (Math.random() * 2 + 1); // 1 -> 3 categories
+		for(int i = 0; i < numCategories; i++) {
+			int newCategoryIndex;
+			do {
+				// don't reuse categories, so generate until we get a new one
+				newCategoryIndex = (int) (Math.random() * categories.length);
+			} while(numsGenerated.contains(newCategoryIndex));
+			numsGenerated.add(newCategoryIndex);
+			
+			c.addCategory(categories[newCategoryIndex]);
+		}
 		
 		return c;
 	}
