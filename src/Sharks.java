@@ -41,7 +41,6 @@ public class Sharks {
 			}
 			
 			System.out.println(" Moving on to the next month!" );
-			steve.setMoney( steve.getMoney() + 10000 );
 			model.updateTable();
 			steve.updateCompanies( model );
 			
@@ -49,7 +48,6 @@ public class Sharks {
 			for( Company c : steve.getCompanies() ) {
 				System.out.println( c.getName() + " | " + c.getValue() );
 			}
-			
 			
 		}
 		
