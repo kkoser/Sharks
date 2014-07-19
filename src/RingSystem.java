@@ -107,18 +107,6 @@ public class RingSystem{
 			System.out.printf("%s\t%4.0f\n",categories[index], officialProfitValues[index]);
 		}
 	}
-	
-	public static void main(String args[]){
-		System.out.println("Hello World!");
-		
-		RingSystem test = new RingSystem();
-		
-		test.updateTable();
-		test.printCatagoriesAndProfits();
-		
-		System.out.println("Goodbye World!");
-	}
-	
 }
 
 

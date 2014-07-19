@@ -6,8 +6,7 @@ public class Sharks {
 
 	public static void main(String[] args) {
 		Investor steve = new Investor( "Steve", 100000.00);
-		GlobalModel model = new GlobalModel();
-		CompanyGenerator generator = new CompanyGenerator();
+		RingSystem model = new RingSystem();
 		System.out.println(getInvestorData(steve));
 		
 		Scanner scan = new Scanner(System.in);
@@ -15,7 +14,7 @@ public class Sharks {
 		while( true ) {
 			ArrayList<Company> newCompanies = new ArrayList<Company>();
 			for(int i = 0; i < 5; i++ ) {
-				Company c = generator.generate();
+				Company c = CompanyGenerator.generate();
 				newCompanies.add( c );
 				System.out.println( i + ". " + c.getPitch() );
 			}
@@ -43,9 +42,15 @@ public class Sharks {
 			
 			System.out.println(" Moving on to the next month!" );
 			steve.setMoney( steve.getMoney() + 10000 );
-			
-			
+			model.updateTable();
 			steve.updateCompanies( model );
+			
+			System.out.println( "Here is how your companies are doing: " );
+			for( Company c : steve.getCompanies() ) {
+				System.out.println( c.getName() + " | " + c.getValue() );
+			}
+			
+			
 		}
 		
 		//scan.close();

@@ -41,14 +41,12 @@ public class Investor {
 	}
 	
 	
-	public void updateCompanies( GlobalModel model ) {
+	public void updateCompanies( RingSystem model ) {
 		for( Company c : getCompanies() )
 		{
 			for( String cat : c.getCategories() ) {
-				c.setValue( c.getValue() * model.getChangeForCategory( cat ) );
+				c.setValue( c.getValue() * model.getProfit( cat ) );
 			}
 		}
 	}
-	
-	
 }
