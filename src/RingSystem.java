@@ -7,14 +7,14 @@ public class RingSystem{
 	}
 	
 	private double[] profitValues = new double[] {
-		  2.50,//0
-		  5.00,//1
-		 10.00,//2
-		 15.00,//3
-		 20.00,//4
-		 25.00,//5
-		 50.00,//6
-		100.00 //7
+		0.0250,//0
+		0.0500,//1
+		0.1000,//2
+		0.1500,//3
+		0.2000,//4
+		0.2500,//5
+		0.5000,//6
+		1.0000 //7
 	};
 	
 	private static String[] categories = new String[] {
