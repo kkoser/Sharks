@@ -54,7 +54,7 @@ public class RingSystem{
 		int tempRingLevel;
 		String temp;
 		Random rnd = new Random();
-		double rangeMax = 20.0;
+		double rangeMax = 0.20;
 		
 		//Mix table
 		for (index = NumberOfCatagories; index > 0; index--)
