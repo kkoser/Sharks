@@ -17,7 +17,7 @@ public class RingSystem{
 		100.00 //7
 	};
 	
-	private String[] catagories = new String[] {
+	private static String[] categories = new String[] {
 	"Big Data",
 	"Wearable",
 	"Android",
@@ -34,13 +34,13 @@ public class RingSystem{
 	
 	private double[] officialProfitValues = new double[12];
 	
-	private int NumberOfCatagories = catagories.length - 1;
+	private int NumberOfCatagories = categories.length - 1;
 	private int selectedRingLevel;
 	
 	public double getProfit(String catagory){
 		for (int index = NumberOfCatagories; index >= 0; index--)
 		{
-			if(catagory.equals(catagories[index])){
+			if(catagory.equals(categories[index])){
 				return officialProfitValues[index];
 			}
 		}
@@ -61,9 +61,9 @@ public class RingSystem{
 			int selection = rnd.nextInt(index + 1);
 			
 			// Simple swap
-			temp = catagories[index];
-			catagories[index] = catagories[selection];
-			catagories[selection] = temp;
+			temp = categories[index];
+			categories[index] = categories[selection];
+			categories[selection] = temp;
 		}
 		
 		//select point on rings
@@ -98,13 +98,13 @@ public class RingSystem{
 		
 	}//end of updateTable
 	
-	public String[] getCategories() {
-		return catagories;
+	public static String[] getCategories() {
+		return categories;
 	}
 	
 	public void printCatagoriesAndProfits(){
 		for (int index = NumberOfCatagories; index > 0; index--){
-			System.out.printf("%s\t%4.0f\n",catagories[index], officialProfitValues[index]);
+			System.out.printf("%s\t%4.0f\n",categories[index], officialProfitValues[index]);
 		}
 	}
 	
