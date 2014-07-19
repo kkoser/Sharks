@@ -11,15 +11,13 @@ public class Company {
 	private int age;
 	public ArrayList<String> categories;
 	
-	public Company() {
-		categories = new ArrayList<String>();
-	}
-	
-	public Company(String n, String t, double v, double iA, ArrayList<String> c) {
-		name = n;
-		value = v;
-		investedAmount = iA;
-		categories = c;
+	public Company(String name, double val, double invested, int age, String owner, ArrayList<String> categories) {
+		this.name = name;
+		this.value = val;
+		this.investedAmount = invested;
+		this.age = age;
+		this.ownerName = owner;
+		this.categories = categories;
 		ownerType = (int) (Math.random() * 5);
 	}
 	
@@ -51,10 +49,6 @@ public class Company {
 	
 	public ArrayList<String> getCategories() {
 		return categories;
-	}
-	
-	public void addCategory(String cat) {
-		categories.add(cat);
 	}
 	
 	public void setCategories(ArrayList<String> c) {
