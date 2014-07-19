@@ -54,7 +54,7 @@ public class CompanyGenerator {
 		String bizName = bizNames[bizNameIndex];
 		
 		int age = (int) (Math.random() * 18); // 0 -> 18 months old
-		int valuation = (int) (Math.random() * 900000 + 100000); // 100,000 -> 1,000,000
+		int valuation = (int) (Math.random() * 900 + 100); // 100 -> 1000
 		int investedAmount = 0;
 		
 		ArrayList<Integer> numsGenerated = new ArrayList<Integer>();
