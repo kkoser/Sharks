@@ -44,8 +44,8 @@ public class Investor {
 	public void updateCompanies( RingSystem model ) {
 		for( Company c : getCompanies() ) {
 			for( String cat : c.getCategories() ) {
-				c.setValue( c.getValue() * (100 * model.getProfit( cat ) ) );
-				double investmentChange = c.getInvestedAmount() * (100 * model.getProfit( cat ) );
+				c.setValue( c.getValue() * (1 + model.getProfit( cat ) ) );
+				double investmentChange = c.getInvestedAmount() * (1 + model.getProfit( cat ) );
 				System.out.println( investmentChange);
 				setMoney( getMoney() + investmentChange );
 				c.setInvestedAmount( c.getInvestedAmount() + investmentChange );
