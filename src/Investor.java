@@ -36,10 +36,9 @@ public class Investor {
 	public void updateCompanies( GlobalModel model ) {
 		for( Company c : getCompanies() )
 		{
-			double change = model.getChangeForCategory( c.getCategory1() );
-			change += model.getChangeForCategory( c.getCategory2() );
-			double newVal = c.getValue() * change;
-			c.setValue( newVal );
+			for( String cat : c.getCategories() ) {
+				c.setValue( c.getValue() * model.getChangeForCategory( cat ) );
+			}
 		}
 	}
 	
