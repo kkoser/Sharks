@@ -1,26 +1,27 @@
+import java.util.ArrayList;
+
 
 public class Company {
 	private String name;
 	private String type;
 	private double value;
 	private double investedAmount;
-	public String category1;
-	public String category2;
+	public ArrayList<String> categories;
 	
-	public String getCategory1() {
-		return category1;
+	public Company(String n, String t, double v, double iA, ArrayList<String> c) {
+		name = n;
+		type = t;
+		value = v;
+		investedAmount = iA;
+		categories = c;
 	}
-
-	public void setCategory1(String category1) {
-		this.category1 = category1;
+	
+	public ArrayList<String> getCategories() {
+		return categories;
 	}
-
-	public String getCategory2() {
-		return category2;
-	}
-
-	public void setCategory2(String category2) {
-		this.category2 = category2;
+	
+	public void setCategories(ArrayList<String> c) {
+		categories = c;
 	}
 
 	public String getName() {
