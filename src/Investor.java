@@ -20,6 +20,7 @@ public class Investor {
 	public ArrayList<Company> getCompanies() {
 		return companies;
 	}
+	
 	public void setCompanies(ArrayList<Company> companies) {
 		this.companies = companies;
 	}
