@@ -29,10 +29,20 @@ public class Company {
 		case 0:
 			return "Hello! I am here today to pitch my company " + getName() + ", and we are excited to revolutionize the " + catString + "industries!";
 		case 1:
-			
+			return "Hi... I am here today to pitch my company " + getName() + ". We do work in the areas of " + catString +". PLease invest in us. Please...";
+		case 2:
+			return "Oh, what's the point. You aren't going to invest in me anyway.";
+		case 3:
+			return "Hey there! I'm here today to pitch you the biggest opportunity of your life. My company " + getName() + " is going to be the next big thing in " + catString + "! If you don't invest now, it's gonna cost you a lot more next round!";
+		case 4:
+			return "
 		}
 		
 		return "";
+	}
+	
+	public void investMoney( double money ) {
+		setInvestedAmount( money / getValue() );
 	}
 	
 	public ArrayList<String> getCategories() {

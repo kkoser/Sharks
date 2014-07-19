@@ -15,6 +15,7 @@ public class Investor {
 
 	public Investor( double initialMoney, String name ) {
 		this.setMoney( initialMoney );
+		companies = new ArrayList<Company>();
 	}
 	
 	public ArrayList<Company> getCompanies() {
