@@ -13,6 +13,7 @@ public class CompanyListPanel extends JPanel {
 	private JTable table;
 	private InvestorTableModel tableModel;
 	private Investor investor;
+	private RingSystem model = new RingSystem();
 
 	public CompanyListPanel( Investor inv ) throws IOException {
 		investor = inv;
@@ -65,5 +66,10 @@ public class CompanyListPanel extends JPanel {
 	
 	public void toNextMonth() throws IOException {
 		ScreenManager.getInstance().displayPresentation();
+	}
+	
+	public void update() {
+		model.updateTable();
+		investor.updateCompanies(model);
 	}
 }
