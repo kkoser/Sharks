@@ -46,7 +46,7 @@ public class Investor {
 			for( String cat : c.getCategories() ) {
 				System.out.println("Profit change: " + model.getProfit(cat) );
 				c.setValue( c.getValue() * (1 + (model.getProfit( cat ) / c.getCategories().size() ) ) );
-				double investmentChange = c.getInvestedAmount() * (1 + model.getProfit( cat ) );
+				double investmentChange = c.getInvestedAmount() * (1 + (model.getProfit( cat ) / c.getCategories().size() ) );
 				System.out.println( investmentChange);
 				setMoney( getMoney() + investmentChange );
 				c.setInvestedAmount( c.getInvestedAmount() + investmentChange );

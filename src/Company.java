@@ -24,7 +24,7 @@ public class Company {
 	public String getPitch() {
 		String catString = "";
 		for( String s : getCategories() ) {
-			catString += s;
+			catString += s + ", ";
 		}
 		
 		switch( this.ownerType ) {
