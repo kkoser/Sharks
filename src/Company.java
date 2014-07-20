@@ -18,7 +18,7 @@ public class Company {
 		this.age = age;
 		this.ownerName = owner;
 		this.categories = categories;
-		ownerType = (int) (Math.random() * 9);
+		ownerType = (int) (Math.random() * 11);
 	}
 	
 	public String getPitch() {
@@ -39,13 +39,13 @@ public class Company {
 		
 		switch( this.ownerType ) {
 		case 0:
-			return "Hello! I am here today to pitch my company " + getName() + ", and we are excited to revolutionize the " + catString + "industries!";
+			return "Hello! Today I'm pitching " + getName() + "! We're excited to revolutionize " + catString + "!";
 		case 1:
-			return "Hi... I am here today to pitch my company " + getName() + ". We do work in the areas of " + catString +". PLease invest in us. Please...";
+			return "My company, " + getName() + " works in the areas of " + catString +". Please invest in us. Please...";
 		case 2:
 			return "My company is awesome! It's called " + getName() + " and we work on " + catString + "! Invest!";
 		case 3:
-			return "Big data, HTML5, lawlcatz, Angular. Buzz words are all over here at " + getName() + " we're the next big thing in " + catString + "!";
+			return "Big data, HTML5, lawlcatz.. Buzz words are big at " + getName() + "! The next big thing in " + catString + "!";
 		case 4:
 			return "Get yo' computing on at " + getName() + "! Yo, yo, we do " + catString + "!";
 		case 5:
@@ -58,6 +58,10 @@ public class Company {
 			return "At " + getName() + " need your financial help to help fund adventures in " + catString + "!";
 		case 9:
 			return "Don't worry, " + getName() + " bans Facebook and Reddit for all employees! Invest in " + catString + "!";
+		case 10:
+			return "At " + getName() + " we literally pull down our pants and poop on the competition. " + catString + "!";
+		case 11:
+			return getName() + " is full of fire-breathing lazer-shooting code monkeys working on " + catString + "!";
 		}
 		
 		return "";
