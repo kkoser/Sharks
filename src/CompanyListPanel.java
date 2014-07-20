@@ -14,6 +14,7 @@ public class CompanyListPanel extends JPanel {
 	private InvestorTableModel tableModel;
 	private Investor investor;
 	private RingSystem model = new RingSystem();
+	private JLabel moneyLabel;
 
 	public CompanyListPanel( Investor inv ) throws IOException {
 		investor = inv;
@@ -27,6 +28,7 @@ public class CompanyListPanel extends JPanel {
 		table.setLocation(447, 100);
 		table.setOpaque(false);
 		table.setEnabled(false);
+		table.setRowHeight(30);
 		this.add(table, BorderLayout.LINE_END);
 		
 		JButton nextMonth = new JButton("Next Month");
@@ -53,8 +55,7 @@ public class CompanyListPanel extends JPanel {
 		nameLabel.setSize(150,50);
 		add(nameLabel);
 		
-		
-		JLabel moneyLabel = new JLabel("Capital: $" + investor.getMoney());
+		moneyLabel = new JLabel("Capital: $" + investor.getMoney());
 		moneyLabel.setLocation(125, 100);
 		moneyLabel.setSize(150, 150);
 		add(moneyLabel);
@@ -71,5 +72,6 @@ public class CompanyListPanel extends JPanel {
 	public void update() {
 		model.updateTable();
 		investor.updateCompanies(model);
+		moneyLabel.setText("Capital: $" + investor.getMoney());
 	}
 }
