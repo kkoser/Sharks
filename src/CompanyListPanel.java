@@ -36,12 +36,6 @@ public class CompanyListPanel extends JPanel {
 		nextMonth.setLocation(120, 700);
 		nextMonth.setSize(150, 40);
 		add(nextMonth);
-		// @todo add button action to display PresentationPane
-		nextMonth.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				toNextMonth();
-			}
-		});
 		
 		JLabel nameLabel = new JLabel(investor.getName());
 		nameLabel.setLocation(150, 50);
@@ -57,11 +51,5 @@ public class CompanyListPanel extends JPanel {
 		IPanel bg = new IPanel("images/tableBackground_1_1.png");
 		this.add(bg);
 		setSize(bg.getSize());
-	
-	}
-	
-	public void toNextMonth() throws IOException {
-		PresentationPanel panel = new PresentationPanel( investor );
-		add(panel);
 	}
 }
