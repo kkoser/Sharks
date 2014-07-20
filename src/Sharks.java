@@ -1,9 +1,11 @@
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 
 
 public class Sharks {
@@ -24,16 +26,10 @@ public class Sharks {
 		RingSystem model = new RingSystem();
 		System.out.println(getInvestorData(steve));
 		
-		JFrame window = new JFrame();
-		window.setSize(1000, 800);
-		
-		CompanyListPanel panel = new CompanyListPanel( steve, model );
-		window.add(panel);
-		window.show();
-		
-//		PresentationPanel mainPanel = new PresentationPanel(steve);
-//		window.add(mainPanel);
-//		window.show();
+		ScreenManager manager = ScreenManager.getInstance();
+		manager.setInvestor( steve );
+		manager.displayCompanyList();
+		manager.getFrame().show();
 		
 		Scanner scan = new Scanner(System.in);
 		

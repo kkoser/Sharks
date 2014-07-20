@@ -38,7 +38,12 @@ public class PresentationPanel extends JPanel {
 			final int iHack = i;
 			investButtons[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					onButtonPress(iHack);
+					try {
+						onButtonPress(iHack);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			});
 		}
@@ -47,8 +52,8 @@ public class PresentationPanel extends JPanel {
 		this.add(image);
 	}
 	
-	private void onButtonPress(int i) {
-		
+	private void onButtonPress(int i) throws IOException {
+		ScreenManager.getInstance().displayCompanyList();
 	}
 
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
@@ -12,11 +13,9 @@ import javax.swing.JTable;
 public class CompanyListPanel extends JPanel {
 	private JTable table;
 	private InvestorTableModel tableModel;
-	private RingSystem model;
 	private Investor investor;
 
-	public CompanyListPanel( Investor inv, RingSystem mod ) throws IOException {
-		model = mod;
+	public CompanyListPanel( Investor inv ) throws IOException {
 		investor = inv;
 		
 		setLayout(null);
@@ -39,7 +38,13 @@ public class CompanyListPanel extends JPanel {
 		// @todo add button action to display PresentationPane
 		nextMonth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				toNextMonth();
+				try {
+					toNextMonth();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					System.out.println("FUCK");
+					e1.printStackTrace();
+				}
 			}
 		});
 		
@@ -61,7 +66,6 @@ public class CompanyListPanel extends JPanel {
 	}
 	
 	public void toNextMonth() throws IOException {
-		PresentationPanel panel = new PresentationPanel( investor );
-		add(panel);
+		ScreenManager.getInstance().displayPresentation();
 	}
 }
