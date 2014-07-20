@@ -12,16 +12,7 @@ public class Sharks {
 
 	public static void main(String[] args) throws IOException {
 		
-		Investor steve = new Investor( "Steve", 100000.00);
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
-		steve.getCompanies().add(CompanyGenerator.generate() );
+		Investor steve = new Investor( "Steve", 500.00);
 		
 		RingSystem model = new RingSystem();
 		System.out.println(getInvestorData(steve));

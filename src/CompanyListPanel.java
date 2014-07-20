@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -7,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 
 
 public class CompanyListPanel extends JPanel {
@@ -15,6 +17,7 @@ public class CompanyListPanel extends JPanel {
 	private Investor investor;
 	private RingSystem model = new RingSystem();
 	private JLabel moneyLabel;
+	private JTextArea hintLabel;
 
 	public CompanyListPanel( Investor inv ) throws IOException {
 		investor = inv;
@@ -60,6 +63,15 @@ public class CompanyListPanel extends JPanel {
 		moneyLabel.setSize(150, 150);
 		add(moneyLabel);
 		
+		hintLabel = new JTextArea();
+		hintLabel.setLocation(50, 200);
+		hintLabel.setSize(300, 400);
+		hintLabel.setLineWrap(true);
+		hintLabel.setOpaque(false);
+		hintLabel.setEditable(false);
+		hintLabel.setWrapStyleWord(true);
+		add(hintLabel);
+		
 		IPanel bg = new IPanel("images/tableBackground_1_1.png");
 		this.add(bg);
 		setSize(bg.getSize());
@@ -72,6 +84,29 @@ public class CompanyListPanel extends JPanel {
 	public void update() {
 		model.updateTable();
 		investor.updateCompanies(model);
-		moneyLabel.setText("Capital: $" + investor.getMoney());
+		moneyLabel.setText("Capital: $" + String.format("%.2f", investor.getMoney()));
+		
+		//update the hint list with who did well and poorly last month
+		String bestCat = RingSystem.categories[0];
+		String worstCat = RingSystem.categories[0];
+		for(String s : RingSystem.categories ) {
+			if( model.getProfit(s) > model.getProfit(bestCat) ) {
+				bestCat = s;
+			}
+			else if( model.getProfit(s) < model.getProfit(worstCat) ) {
+				worstCat = s;
+			}
+		}
+		
+		String text = "TEST";
+		switch( (int) (Math.random() * 2) ) {
+		case 0:
+			text = "It looks like " + bestCat + " is really taking off this month! On the other hand, the world seems to have turned on " + worstCat + ".";
+			break;
+		case 1:
+			text = "The next hot thing is " + bestCat + "! They seem to be replacing " + worstCat + " everywhere!";
+		}
+		
+		hintLabel.setText( text );
 	}
 }
