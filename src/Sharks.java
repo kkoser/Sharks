@@ -1,13 +1,25 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 
 public class Sharks {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		
 		Investor steve = new Investor( "Steve", 100000.00);
 		RingSystem model = new RingSystem();
 		System.out.println(getInvestorData(steve));
+		
+		JFrame window = new JFrame();
+		window.setSize(1000, 800);
+		
+		PresentationPanel mainPanel = new PresentationPanel(steve);
+		window.add(mainPanel);
+		window.show();
 		
 		Scanner scan = new Scanner(System.in);
 		
