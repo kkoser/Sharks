@@ -20,7 +20,6 @@ public class IPanel extends JPanel {
 	    super.paintComponent(g);
 	    if (image != null) {
 	        g.drawImage(image, 0, 0, null);
-	        System.out.println( "Drawing the bg image" );
 	    }
 	}
 }
