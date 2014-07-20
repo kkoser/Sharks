@@ -12,7 +12,7 @@ public class IPanel extends JPanel {
 
 	public IPanel(String fileName) throws IOException {
 	    image = ImageIO.read(new File(fileName));
-	    setSize(image.getHeight(null), image.getWidth(null) );
+	    setSize(image.getWidth(null), image.getHeight(null));
 	  }
 	
 	@Override
