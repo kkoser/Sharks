@@ -12,10 +12,12 @@ public class PresentationPanel extends JPanel {
 	
 	private Investor investor;
 	private Company[] companies;
+	private JTextArea[] pitchTexts;
 	
 	public PresentationPanel(Investor inv) throws IOException {
 		investor = inv;
 		companies = new Company[4];
+		pitchTexts = new JTextArea[4];
 
 		setLayout(null);
 
@@ -28,34 +30,27 @@ public class PresentationPanel extends JPanel {
 		JButton[] investButtons = new JButton[4];
 
 		for(int i = 0; i < 4; i++) {
+			pitchTexts[i] = new JTextArea();
+		}
+		pitchTexts[0].setLocation(217, 392);
+		pitchTexts[1].setLocation(291, 213);
+		pitchTexts[2].setLocation(533, 213);
+		pitchTexts[3].setLocation(605, 392);
+		
+		for(int i = 0; i < 4; i++) {
 			if(companies[i] == null) {
 				companies[i] = CompanyGenerator.generate();
 			}
 			
 			String pitch = companies[i].getPitch();
 			JTextArea textArea = new JTextArea(pitch);
-			textArea.setHighlighter(null);
-			textArea.setSize(183, 83);
-			textArea.setLineWrap(true);
-			textArea.setOpaque(false);
-			textArea.setEditable(false);
-			textArea.setWrapStyleWord(true);
-			this.add(textArea);
-			
-			if(i == 0) {
-				textArea.setLocation(217, 392);
-			}
-			
-			if(i == 1) {
-				textArea.setLocation(291, 213);
-			}
-			
-			if(i == 2) {
-				textArea.setLocation(533, 213);
-			}
-			if(i == 3) {
-				textArea.setLocation(605, 392);
-			}
+			pitchTexts[i].setHighlighter(null);
+			pitchTexts[i].setSize(183, 83);
+			pitchTexts[i].setLineWrap(true);
+			pitchTexts[i].setOpaque(false);
+			pitchTexts[i].setEditable(false);
+			pitchTexts[i].setWrapStyleWord(true);
+			this.add(pitchTexts[i]);
 			
 			investButtons[i] = new JButton("Invest");
 			investButtons[i].setSize(buttonWidth, buttonHeight);
@@ -100,6 +95,7 @@ public class PresentationPanel extends JPanel {
 	public void regenerateCompanies() {
 		for(int i = 0; i < 4; i++) {
 			companies[i] = CompanyGenerator.generate();
+			pitchTexts[i].setText(companies[i].getPitch());
 		}
 	}
 	
