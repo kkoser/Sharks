@@ -50,7 +50,7 @@ public class InvestorTableModel extends AbstractTableModel {
 			}
 			return str;
 		case 2:
-			return comp.getValue();
+			return "$" + String.format("%.2f", comp.getValue());
 		}
 		
 		return new Object();
