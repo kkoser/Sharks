@@ -48,7 +48,7 @@ public class PresentationPanel extends JPanel {
 			});
 		}
 
-		IPanel image = new IPanel("images/pitchBackground_1_1.png");
+		IPanel image = new IPanel("images/pitchBackground_2_1.png");
 		this.add(image);
 	}
 	
