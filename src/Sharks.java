@@ -41,6 +41,7 @@ public class Sharks {
 				System.out.println( i + ". " + c.getPitch() );
 			}
 			
+			
 			System.out.println( "Enter the number of the company you would like to invest in, or -1 to finish." );
 			int choice = scan.nextInt();
 			while( choice != -1 ) {

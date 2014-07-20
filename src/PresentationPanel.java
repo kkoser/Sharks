@@ -3,8 +3,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 
 public class PresentationPanel extends JPanel {
 	
@@ -52,8 +52,17 @@ public class PresentationPanel extends JPanel {
 		this.add(image);
 	}
 	
+	private void regenerateCompanies() {
+		for(int i = 0; i < 4; i++) {
+			companies[i] = CompanyGenerator.generate();
+		}
+	}
+	
 	private void onButtonPress(int i) throws IOException {
-		ScreenManager.getInstance().displayCompanyList();
+		JOptionPane jOpt = new JOptionPane();
+		jOpt.show();
+
+//		ScreenManager.getInstance().displayCompanyList();
 	}
 
 }
