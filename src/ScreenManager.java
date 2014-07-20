@@ -45,6 +45,7 @@ public class ScreenManager {
 			listPanel = new CompanyListPanel( investor );
 			frame.add(listPanel);
 		}
+		listPanel.update();
 		listPanel.setVisible(true);
 		
 		if( presPanel != null)
@@ -56,6 +57,7 @@ public class ScreenManager {
 			presPanel = new PresentationPanel( investor );
 			frame.add(presPanel);
 		}
+		// ALEX ADD COMPNAY GENERATION FUNCTION CALL HERE
 		presPanel.setVisible(true);
 
 		if( listPanel != null )
