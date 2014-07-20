@@ -17,7 +17,7 @@ public class RingSystem{
 		1.0000 //7
 	};
 	
-	private static String[] categories = new String[] {
+	public static String[] categories = new String[] {
 	"Big Data",
 	"Wearable",
 	"Android",
@@ -47,6 +47,10 @@ public class RingSystem{
 		
 		return 0.0;
 		
+	}
+	
+	public double[] getProfits() {
+		return officialProfitValues;
 	}
 	
 	public void updateTable(){
