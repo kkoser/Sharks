@@ -105,6 +105,12 @@ public class CompanyListPanel extends JPanel {
 			break;
 		case 1:
 			text = "The next hot thing is " + bestCat + "! They seem to be replacing " + worstCat + " everywhere!";
+			break;
+		case 2:
+			text = bestCat + " really killed it this month! Its too bad " + worstCat + "didn't do the same.";
+			break;
+		case 3:
+			
 		}
 		
 		hintLabel.setText( text );
