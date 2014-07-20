@@ -7,8 +7,10 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.table.JTableHeader;
 
 
 public class CompanyListPanel extends JPanel {
@@ -32,8 +34,13 @@ public class CompanyListPanel extends JPanel {
 		table.setOpaque(false);
 		table.setEnabled(false);
 		table.setRowHeight(30);
-		this.add(table, BorderLayout.LINE_END);
-		
+		//this.add(table, BorderLayout.LINE_END);
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setSize(513,670);
+		scrollPane.setLocation(447, 100);
+		table.setFillsViewportHeight(true);
+		add(scrollPane);
+
 		JButton nextMonth = new JButton("Next Month");
 		nextMonth.setOpaque(false);
 		nextMonth.setContentAreaFilled(false);
