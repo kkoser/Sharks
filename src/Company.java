@@ -37,14 +37,14 @@ public class Company {
 		case 3:
 			return "Hey there! I'm here today to pitch you the biggest opportunity of your life. My company " + getName() + " is going to be the next big thing in " + catString + "! If you don't invest now, it's gonna cost you a lot more next round!";
 		case 4:
-			return "";
+			return "Farts";
 		}
 		
 		return "";
 	}
 	
 	public void investMoney( double money ) {
-		setInvestedAmount( money / getValue() );
+		setInvestedAmount( money );
 	}
 	
 	public ArrayList<String> getCategories() {
