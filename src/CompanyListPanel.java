@@ -36,7 +36,7 @@ public class CompanyListPanel extends JPanel {
 		table.setRowHeight(30);
 		//this.add(table, BorderLayout.LINE_END);
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setSize(513,670);
+		scrollPane.setSize(513,660);
 		scrollPane.setLocation(447, 100);
 		table.setFillsViewportHeight(true);
 		add(scrollPane);
