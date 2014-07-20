@@ -1,18 +1,13 @@
-import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
 
 
 public class Sharks {
 
 	public static void main(String[] args) throws IOException {
 		
-		Investor steve = new Investor( "Steve", 500.00);
+		Investor steve = new Investor( "Steve", 2000.00);
 		
 		RingSystem model = new RingSystem();
 		System.out.println(getInvestorData(steve));

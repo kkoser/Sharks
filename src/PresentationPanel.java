@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -25,7 +26,7 @@ public class PresentationPanel extends JPanel {
 		balance = new JTextArea();
 		balance.setText("$" + inv.getMoney());
 		balance.setSize(100, 25);
-		balance.setLocation(290, 675);
+		balance.setLocation(285, 675);
 		balance.setEditable(false);
 		balance.setHighlighter(null);
 		balance.setFont(new Font("Arial", Font.BOLD, 14));
@@ -121,7 +122,8 @@ public class PresentationPanel extends JPanel {
 		//if(amount <= 0) return;
 		comp.investMoney(investment);
 		investor.setMoney( investor.getMoney() - investment);
-		balance.setText( "$" + Double.toString(investor.getMoney()) );
+		DecimalFormat df = new DecimalFormat("#.##");
+		balance.setText( "$" + df.format(investor.getMoney()) );
 		investor.getCompanies().add(comp);
 	}
 
