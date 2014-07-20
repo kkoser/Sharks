@@ -17,6 +17,8 @@ public class InvestorTableModel extends AbstractTableModel {
         	return "Categories";
         case 2:
         	return "Value";
+        case 3:
+        	return "Stake";
         }
         
         return "";
@@ -34,7 +36,7 @@ public class InvestorTableModel extends AbstractTableModel {
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 3;
+		return 4;
 	}
 
 	@Override
@@ -51,6 +53,8 @@ public class InvestorTableModel extends AbstractTableModel {
 			return str;
 		case 2:
 			return "$" + String.format("%.2f", comp.getValue());
+		case 3:
+			return String.format("%.2f", (comp.getInvestedAmount() / comp.getValue() * 100) ) + "%";
 		}
 		
 		return new Object();
